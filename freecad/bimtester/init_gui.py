@@ -37,10 +37,6 @@ class BIMTester(Gui.Workbench):
         self.appendToolbar(wbname, tool_specifier_list)
         self.appendMenu(wbname, tool_specifier_list)
 
-        # start bimtester panel
-        from freecad.bimtester import task_panel
-        task_panel.show_panel()
-
     def GetClassName(self):
         return "Gui::PythonWorkbench"
 
