@@ -26,6 +26,14 @@ import os
 import FreeCADGui as Gui
 
 
+try:
+    from code_bimtester.bimtester import package_path
+    icon_path = os.path.join(package_path, "resources", "icons", "bimtester.ico")
+except:
+    icon_path = ""
+    print("BIMTester source code is missing.")
+
+
 wbname = "BIMTester"
 
 
@@ -34,8 +42,8 @@ class BIMTester(Gui.Workbench):
     Class which gets initiated at startup of the FreeCAD GUI.
     """
 
-    from code_bimtester.bimtester import package_path
-    Icon = os.path.join(package_path, "resources", "icons", "bimtester.ico")
+    if icon_path != "":
+        Icon = icon_path
     MenuText = wbname
     ToolTip = "ToolTip for {}".format(wbname)
 
@@ -68,12 +76,9 @@ class TOOL1():
         task_panel.show_panel()
 
     def GetResources(self):
-        from code_bimtester.bimtester import package_path
         return {
-            "Pixmap": os.path.join(
-                package_path, "resources", "icons", "bimtester.ico"
-            ),
-            "MenuText": "TOOL1",
+            "Pixmap": icon_path,
+            "MenuText": "BIMTester GUI",
             "ToolTip": "Start BIMTester task panel"
         }
 
