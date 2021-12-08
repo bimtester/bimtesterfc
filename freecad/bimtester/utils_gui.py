@@ -19,6 +19,11 @@ def get_bimtester_code_path():
     return join(package_path, "..")
 
 
+def get_language():
+    from locale import getdefaultlocale
+    return getdefaultlocale()[0][0:2]
+
+
 def get_default_args():
 
     args = {
@@ -32,7 +37,8 @@ def get_default_args():
         "steps": "",
         "schema_file": "",
         "schema_name": "",
-        "lang": "",
+        # "lang": get_language(),  # uses machines lang for output messages
+        "lang": "",  # uses feature file lang for output messages
     }
     # print(args)
 
