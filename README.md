@@ -19,3 +19,12 @@
 + it is set to the BIMTester included IFC2x3 example and the German feature file
 + click on run
 + :-)
+
+### Running CLI without FreeCad or BlenderBIM
+
++ Clone the repository
++ Create new python environment (e.g., Conda or venv)
++ Run `pip install -r requirements.txt` in console. 
+  Make sure your console is set to the correct path (e.g., `path/to/bimtesterfc` folder)
++ Run CLI tool (e.g.,  ` python .\code_bimtester\cli.py -i .\code_bimtester\examples\01_ifcschema_translated\IFC2X3_col.ifc -f .\code_bimtester\examples\01_ifcschema_translated\features\de_grundlagen.feature -c`)
+
